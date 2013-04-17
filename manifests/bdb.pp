@@ -10,28 +10,28 @@ class bdb {
     centos, Scientific: {
       exec { 'download':
         command => "/usr/bin/wget ${url} -O- | tar -xzf -",
-        cwd     => "/usr/local/src",
+        cwd     => '/usr/local/src',
         timeout => 120,
       }
 
       exec { 'configure':
-        command => "/usr/local/src/db-5.1.29/dist/configure --enable-cxx --prefix=/usr/local",
+        command => '/usr/local/src/db-5.1.29/dist/configure --enable-cxx --prefix=/usr/local',
         cwd     => $cwd,
         require => Exec['download']
       }
 
       exec { 'build':
-        command   => "make",
+        command   => 'make',
         cwd       => $cwd,
         timeout   => 0,
-        path      => ["/bin", "/usr/bin"],
+        path      => ['/bin', '/usr/bin'],
         require   => [Exec['configure'], Class['cpp']]
       }
 
       exec { 'install':
-        command => "make install",
+        command => 'make install',
         cwd     => $cwd,
-        path    => ["/bin", "/usr/bin"],
+        path    => ['/bin', '/usr/bin'],
         require => Exec['build']
       }
     }

@@ -26,6 +26,7 @@ class vsfs {
       $pkgconfig = 'pkgconfig'
       $libattr = 'libattr-devel'
       $libfuse = 'fuse-devel'
+      $libssl = 'openssl-devel'
     }
     ubuntu: {
       $git = 'git-core'
@@ -33,6 +34,7 @@ class vsfs {
       $pkgconfig = 'pkg-config'
       $libattr = 'libattr1-dev'
       $libfuse = 'libfuse-dev'
+      $libssl = 'libssl-dev'
     }
   }
 
@@ -65,6 +67,10 @@ class vsfs {
     name   => $libattr,
   }
 
+  package { 'libssl':
+    ensure => installed,
+    name   => $libssl,
+  }
   case $operatingsystem {
     centos, Scientific: {
       package { ['protobuf-devel', 'mysql++-devel', 'gperftools-devel']:

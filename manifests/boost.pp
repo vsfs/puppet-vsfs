@@ -1,7 +1,7 @@
 # vim: set ft=ruby
 # Install boost from source
 
-class boost {
+class vsfs::boost {
 
   $download_url = 'http://superb-dca3.dl.sourceforge.net/project/boost/boost/1.53.0/boost_1_53_0.tar.bz2'
   $cwd = '/usr/local/src/boost_1_53_0'
@@ -24,8 +24,8 @@ class boost {
       exec { 'build_boost':
         cwd     => $cwd,
         command => "/bin/bash -c '${cwd}/b2 threading=multi install'",
-        require => Exec["configure_boost"],
-		timeout => 0,
+        require => Exec['configure_boost'],
+        timeout => 0,
       }
     }
     ubuntu: {

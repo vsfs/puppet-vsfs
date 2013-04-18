@@ -38,7 +38,7 @@ class vsfs {
 
   package { 'git':
     ensure => present,
-    name => $git,
+    name   => $git,
   }
 
   package { [ 'autoconf', 'automake', 'cscope', 'ctags', 'curl', 'make', 'wget',
@@ -48,12 +48,12 @@ class vsfs {
 
   package { 'vim':
     ensure => present,
-    name => $vim,
+    name   => $vim,
   }
 
   package { 'pkgconfig':
     ensure => installed,
-    name => $pkgconfig,
+    name   => $pkgconfig,
   }
 
   package { ['fuse', $libfuse]:
@@ -69,7 +69,7 @@ class vsfs {
     centos, Scientific: {
       package { ['protobuf-devel', 'mysql++-devel', 'gperftools-devel']:
         ensure  => installed,
-        require => Yumrepo["EPEL"],
+        require => Yumrepo['EPEL'],
       }
     }
     ubuntu: {

@@ -1,25 +1,25 @@
 # Install google-test, google-mock, google-gflags, google-logging.
-class google {
+class vsfs::google {
   include cpp
 
   $gflags_version = '2.0-1'
 
   case $operatingsystem {
-	centos, Scientific: {
-	  package { 'gflags-devel':
-		provider => rpm,
-		ensure   => installed,
-		source   => "https://gflags.googlecode.com/files/gflags-devel-${gflags_version}.amd64.rpm",
-		require  => Package['gflags']
-	  }
+    centos, Scientific: {
+      package { 'gflags-devel':
+        provider => rpm,
+        ensure   => installed,
+        source   => "https://gflags.googlecode.com/files/gflags-devel-${gflags_version}.amd64.rpm",
+        require  => Package['gflags']
+      }
 
       package { 'gflags':
-	    provider => rpm,
-	    ensure   => installed,
-		source   => "https://gflags.googlecode.com/files/gflags-${gflags_version}.amd64.rpm"
+        provider => rpm,
+        ensure   => installed,
+        source   => "https://gflags.googlecode.com/files/gflags-${gflags_version}.amd64.rpm"
       }
-	}
-	ubuntu: {
+    }
+    ubuntu: {
       package { "libgflags2":
         provider => apt,
         ensure   => installed,
@@ -31,7 +31,7 @@ class google {
         ensure   => installed,
         source   => "https://gflags.googlecode.com/files/libgflags-dev_${gflags_version}_amd64.deb"
       }
-	}
+    }
   }
 
   package { 'unzip':

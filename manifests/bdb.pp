@@ -1,6 +1,6 @@
 # Build Berkeley DB from source
 
-class bdb {
+class vsfs::bdb {
   include cpp
   $version = "5.1.29"
   $url = "http://download.oracle.com/berkeley-db/db-${version}.tar.gz"

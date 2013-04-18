@@ -1,9 +1,9 @@
 class vsfs::leveldb {
   case $operatingsystem {
-   centos, Scientific: {
-    $repo_url = 'http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm'
+    centos, Scientific: {
+      $repo_url = 'http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm'
 
-    yumrepo { 'EPEL':
+	      yumrepo { 'EPEL':
       baseurl  => 'http://dl.fedoraproject.org/pub/epel/6/x86_64',
       enabled  => 1,
       gpgcheck => 0,

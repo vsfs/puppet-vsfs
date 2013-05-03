@@ -15,7 +15,6 @@ class vsfs {
   include boost
   include cpp
   include google
-  include leveldb
   include libevent
   include thrift
 

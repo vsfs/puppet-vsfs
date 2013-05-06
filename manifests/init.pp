@@ -42,6 +42,12 @@ class vsfs {
       $libattr = 'libattr1-dev'
       $libfuse = 'libfuse-dev'
       $libssl = 'libssl-dev'
+
+      exec { 'apt-get update':
+        command => '/usr/bin/apt-get update'
+      }
+
+      Exec['apt-get update'] -> Package <| |>
     }
   }
 

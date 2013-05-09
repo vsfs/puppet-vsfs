@@ -29,8 +29,8 @@ class vsfs::boost {
       }
     }
     ubuntu: {
-      package { ['libboost-filesystem1.50-dev',
-        'libboost-serialization1.50-dev']:
+      package { ['libboost-filesystem1.53-dev',
+        'libboost-serialization1.53-dev']:
         ensure => installed,
       }
     }

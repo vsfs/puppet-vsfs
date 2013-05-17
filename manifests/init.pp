@@ -57,7 +57,7 @@ class vsfs {
   }
 
   package { [ 'autoconf', 'automake', 'cscope', 'ctags', 'curl', 'make', 'wget',
-      'libtool', 'gdb' ]:
+      'libtool', 'gdb', 'autoconf-archive' ]:
     ensure => present,
   }
 

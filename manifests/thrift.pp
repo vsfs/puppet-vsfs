@@ -2,7 +2,7 @@
 class vsfs::thrift {
   include cpp
   include libevent
-  $version = '0.9.0'
+  $version = '0.9.1'
 
   exec { 'download_thrift':
     command => "wget https://dist.apache.org/repos/dist/release/thrift/${version}/thrift-${version}.tar.gz -O- | tar -xzf -",

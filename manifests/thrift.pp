@@ -4,6 +4,10 @@ class vsfs::thrift {
   include libevent
   $version = '0.9.1'
 
+  package { ['bison', 'flex']:
+    ensure => installed,
+  }
+
   exec { 'download_thrift':
     command => "wget https://dist.apache.org/repos/dist/release/thrift/${version}/thrift-${version}.tar.gz -O- | tar -xzf -",
     cwd     => '/usr/local/src',

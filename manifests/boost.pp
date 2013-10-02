@@ -29,7 +29,7 @@ class vsfs::boost {
       }
     }
     ubuntu: {
-      package { ['libboost-filesystem1.53-dev'],
+      package { 'libboost-filesystem1.53-dev':
         ensure => installed,
       }
     }

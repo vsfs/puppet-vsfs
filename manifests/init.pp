@@ -15,6 +15,8 @@ class vsfs {
   include cpp
   include google
   include libevent
+  include snappy
+  include leveldb
   include thrift
 
   case $operatingsystem {

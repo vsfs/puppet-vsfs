@@ -9,7 +9,7 @@ class vsfs::thrift {
   }
 
   exec { 'download_thrift':
-    command => "wget https://dist.apache.org/repos/dist/release/thrift/${version}/thrift-${version}.tar.gz -O- | tar -xzf -",
+    command => "wget https://dist.apache.org/repos/dist/release/thrift/${version}/thrift-${version}.tar.gz -O- | tar -xz",
     cwd     => '/usr/local/src',
     path    => ['/usr/bin', '/bin'],
   }

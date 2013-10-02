@@ -2,7 +2,7 @@
 class vsfs::thrift {
   include cpp
   include libevent
-  $version = '0.9.1'
+  $version = '0.9.0'
 
   package { ['bison', 'flex']:
     ensure => installed,

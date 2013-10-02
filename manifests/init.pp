@@ -11,7 +11,6 @@
 # Copyright 2013 Lei Xu
 #
 class vsfs {
-  include bdb
   include boost
   include cpp
   include google
@@ -84,15 +83,16 @@ class vsfs {
     ensure => installed,
     name   => $libssl,
   }
+
   case $operatingsystem {
     centos, Scientific: {
-      package { ['protobuf-devel', 'mysql++-devel', 'gperftools-devel']:
+      package { ['gperftools-devel']:
         ensure  => installed,
         require => Yumrepo['EPEL'],
       }
     }
     ubuntu: {
-      package { ['libprotobuf-dev', 'libmysql++-dev', 'libgoogle-perftools-dev']:
+      package { ['libgoogle-perftools-dev']:
         ensure => installed,
       }
     }

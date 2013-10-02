@@ -16,7 +16,7 @@ class vsfs::boost {
 
       exec { 'configure_boost':
         cwd      => $cwd,
-        command  => "/bin/bash -c '${cwd}/bootstrap.sh -with-libraries=filesystem,serialization,system'",
+        command  => "/bin/bash -c '${cwd}/bootstrap.sh -with-libraries=filesystem,system'",
         require  => [Exec['download_boost'], Class['cpp']],
         provider => shell,
       }
@@ -29,8 +29,7 @@ class vsfs::boost {
       }
     }
     ubuntu: {
-      package { ['libboost-filesystem1.53-dev',
-        'libboost-serialization1.53-dev']:
+      package { ['libboost-filesystem1.53-dev'],
         ensure => installed,
       }
     }

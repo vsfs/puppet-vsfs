@@ -100,5 +100,3 @@ class vsfs {
     }
   }
 }
-
-include 'vsfs'

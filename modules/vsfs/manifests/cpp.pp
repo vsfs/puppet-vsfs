@@ -1,6 +1,6 @@
 # Install g++ 4.7 with C++11 support.
 class vsfs::cpp {
-  case $operatingsystem {
+  case $::operatingsystem {
     centos, Scientific: {
       yumrepo { 'devtools':
         baseurl  => 'http://people.centos.org/tru/devtools-1.1/6/x86_64/RPMS/',
@@ -27,6 +27,9 @@ export PATH=/opt/centos/devtoolset-1.1/root/usr/bin/:$PATH',
       package { 'g++':
         ensure => installed,
       }
+    }
+    default: {
+      # Do nothing? or throw a warning.
     }
   }
 }

@@ -3,8 +3,8 @@
 
 class vsfs::boost {
 
-  $download_url = 'http://superb-dca3.dl.sourceforge.net/project/boost/boost/1.53.0/boost_1_53_0.tar.bz2'
-  $cwd = '/usr/local/src/boost_1_53_0'
+  $download_url = 'http://superb-dca3.dl.sourceforge.net/project/boost/boost/1.54.0/boost_1_54_0.tar.bz2'
+  $cwd = '/usr/local/src/boost_1_54_0'
 
   case $operatingsystem {
     centos, Scientific: {
@@ -29,7 +29,7 @@ class vsfs::boost {
       }
     }
     ubuntu: {
-      package { 'libboost-filesystem1.53-dev':
+      package { 'libboost-filesystem1.54-dev':
         ensure => installed,
       }
     }

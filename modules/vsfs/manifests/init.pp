@@ -18,6 +18,7 @@ class vsfs {
   include snappy
   include leveldb
   include thrift
+  include java
 
   case $operatingsystem {
     centos, Scientific: {

@@ -59,7 +59,7 @@ class vsfs {
   }
 
   package { [ 'autoconf', 'automake', 'cscope', 'ctags', 'curl', 'make', 'wget',
-      'libtool', 'gdb', 'autoconf-archive' ]:
+      'libtool', 'gdb']:
     ensure => present,
   }
 
@@ -89,13 +89,13 @@ class vsfs {
 
   case $operatingsystem {
     centos, Scientific: {
-      package { ['gperftools-devel']:
+      package { ['gperftools-devel', 'autoconf-archive']:
         ensure  => installed,
         require => Yumrepo['EPEL'],
       }
     }
     ubuntu: {
-      package { ['libgoogle-perftools-dev']:
+      package { ['libgoogle-perftools-dev', 'autoconf-archive']:
         ensure => installed,
       }
     }

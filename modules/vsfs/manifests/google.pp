@@ -19,7 +19,7 @@ class vsfs::google {
         source   => "https://gflags.googlecode.com/files/gflags-${gflags_version}.amd64.rpm"
       }
 
-      pacakge { 'glog-devel':
+      package { 'glog-devel':
         ensure => installed,
       }
     }

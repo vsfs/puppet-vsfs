@@ -16,7 +16,7 @@ class vsfs::snappy {
         require => [Exec['download_snappy'], Class['cpp']],
       }
     }
-    ubuntu: {
+    ubuntu, Debian: {
       package { 'libsnappy-dev':
         ensure => installed,
       }

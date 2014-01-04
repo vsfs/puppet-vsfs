@@ -37,7 +37,7 @@ class vsfs {
         gpgcheck => 0,
       }
     }
-    ubuntu: {
+    ubuntu, Debian: {
       $git = 'git-core'
       $vim = 'vim'
       $pkgconfig = 'pkg-config'
@@ -94,7 +94,7 @@ class vsfs {
         require => Yumrepo['EPEL'],
       }
     }
-    ubuntu: {
+    ubuntu, Debian: {
       package { ['libgoogle-perftools-dev', 'autoconf-archive']:
         ensure => installed,
       }

@@ -23,7 +23,7 @@ class vsfs::leveldb {
         require => Exec[build_leveldb],
       }
     }
-    ubuntu: {
+    ubuntu, Debian: {
       package { 'libleveldb-dev':
         ensure => installed,
       }

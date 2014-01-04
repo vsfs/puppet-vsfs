@@ -23,7 +23,7 @@ class vsfs::google {
         ensure => installed
       }
     }
-    ubuntu: {
+    ubuntu, Debian: {
       package { 'libgflags2':
         ensure   => installed,
         provider => apt,

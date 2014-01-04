@@ -28,7 +28,7 @@ class vsfs::boost {
         timeout => 0,
       }
     }
-    ubuntu: {
+    ubuntu, Debian: {
       package { ['libboost-filesystem1.54-dev',
                  'libboost-python1.54-dev']:
         ensure => installed,

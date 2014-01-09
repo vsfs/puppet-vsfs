@@ -26,7 +26,7 @@ class vsfs::libevent {
         require => Exec['configure_libevent']
       }
     }
-    ubuntu:  {
+    ubuntu, Debian:  {
       package { 'libevent-dev':
         ensure => installed,
       }

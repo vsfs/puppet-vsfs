@@ -7,7 +7,7 @@ class vsfs::java {
         ensure => latest,
       }
     }
-    ubuntu: {
+    ubuntu, Debian: {
       package { 'openjdk':
         name   => "openjdk-7-jdk",
         ensure => latest,

@@ -23,7 +23,7 @@ export PATH=/opt/centos/devtoolset-1.1/root/usr/bin/:$PATH',
         require => Package['devtoolset-1.1'],
       }
     }
-    ubuntu: {
+    ubuntu, Debian: {
       package { 'g++':
         ensure => installed,
       }

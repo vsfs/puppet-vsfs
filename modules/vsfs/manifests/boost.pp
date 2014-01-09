@@ -16,7 +16,7 @@ class vsfs::boost {
 
       exec { 'configure_boost':
         cwd      => $cwd,
-        command  => "/bin/bash -c '${cwd}/bootstrap.sh -with-libraries=filesystem,system'",
+        command  => "/bin/bash -c '${cwd}/bootstrap.sh -with-libraries=filesystem,system,python'",
         require  => [Exec['download_boost'], Class['cpp']],
         provider => shell,
       }
@@ -28,8 +28,9 @@ class vsfs::boost {
         timeout => 0,
       }
     }
-    ubuntu: {
-      package { 'libboost-filesystem1.54-dev':
+    ubuntu, Debian: {
+      package { ['libboost-filesystem1.54-dev',
+                 'libboost-python1.54-dev']:
         ensure => installed,
       }
     }

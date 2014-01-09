@@ -91,13 +91,13 @@ class vsfs {
 
   case $operatingsystem {
     centos, Scientific: {
-      package { ['gperftools-devel']:
+      package { ['gperftools-devel', 'autoconf-archive']:
         ensure  => installed,
         require => Yumrepo['EPEL'],
       }
     }
     ubuntu, Debian: {
-      package { ['libgoogle-perftools-dev']:
+      package { ['libgoogle-perftools-dev', 'autoconf-archive']:
         ensure => installed,
       }
     }

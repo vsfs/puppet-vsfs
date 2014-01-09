@@ -28,6 +28,7 @@ class vsfs {
       $libattr = 'libattr-devel'
       $libfuse = 'fuse-devel'
       $libssl = 'openssl-devel'
+      $ronn = 'rubygem-ronn'
 
       $repo_url = 'http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm'
 
@@ -37,13 +38,14 @@ class vsfs {
         gpgcheck => 0,
       }
     }
-    ubuntu: {
+    ubuntu, Debian: {
       $git = 'git-core'
       $vim = 'vim'
       $pkgconfig = 'pkg-config'
       $libattr = 'libattr1-dev'
       $libfuse = 'libfuse-dev'
       $libssl = 'libssl-dev'
+      $ronn = 'ruby-ronn'
 
       exec { 'apt-get update':
         command => '/usr/bin/apt-get update'
@@ -58,8 +60,8 @@ class vsfs {
     name   => $git,
   }
 
-  package { [ 'autoconf', 'automake', 'cscope', 'ctags', 'curl', 'make', 'wget',
-      'libtool', 'gdb', 'autoconf-archive' ]:
+  package { ['autoconf', 'automake', 'cscope', 'ctags', 'curl', 'make', 'wget',
+      'libtool', 'gdb', 'autoconf-archive', $ronn]:
     ensure => present,
   }
 
@@ -94,7 +96,7 @@ class vsfs {
         require => Yumrepo['EPEL'],
       }
     }
-    ubuntu: {
+    ubuntu, Debian: {
       package { ['libgoogle-perftools-dev']:
         ensure => installed,
       }
